@@ -24,7 +24,6 @@ public class User {
         this.username = username;
     }
 
-
     // Method to add a tweet to the tweetsByUser set.
     public void addTweetToUser(Tweet tweet) {
         this.tweetsByUser.add(tweet);
@@ -38,7 +37,7 @@ public class User {
 
     @Override
     public String toString() {
-        return "datastructure.User{" +
+        return "User{" +
                 "username='" + username + '\'' +
                 ", tweetsByUser=" + tweetsByUser +
                 '}';

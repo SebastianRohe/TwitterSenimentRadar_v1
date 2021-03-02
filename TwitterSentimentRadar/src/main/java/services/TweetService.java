@@ -7,11 +7,11 @@ import java.util.*;
 public class TweetService {
 
     /**
-     * @param tweetSet
-     * @return Set of all users from tweets.
      * @author Sebastian Rohe
      * This method takes a set of users and tweets and fills the user set with the user strings of every tweet.
      * Requires a set of tweets and a set of users.
+     * @param tweetSet
+     * @return Set of all users from tweets.
      */
     public Set<String> getAllUsers(Set<Tweet> tweetSet) {
 
@@ -19,20 +19,20 @@ public class TweetService {
 
         // For every tweet the user string gets added as element in user set.
         for (Tweet tweet : tweetSet) {
-            userSet.add(tweet.getUser()); // datastructure.User gets added to userSet
+            userSet.add(tweet.getUser()); // User gets added to user set
         }
 
-        // Return resulting userSet.
+        // Return resulting user set.
         return userSet;
 
     }
 
     /**
-     * @param tweetSet
-     * @return Average length of tweet content as double value.
      * @author Sebastian Rohe
      * Method to calculate the average length of tweet content.
      * Requires a set of tweets and a set of users.
+     * @param tweetSet
+     * @return Average length of tweet content as double value.
      */
     public double getAverageTweetLength(Set<Tweet> tweetSet) {
 
@@ -52,10 +52,10 @@ public class TweetService {
     }
 
     /**
-     * @param tweetSet
-     * @return Average number of words in tweets.
      * @author Sebastian Rohe
      * Method to calculate the average word count in tweets. Requires a set of tweets.
+     * @param tweetSet
+     * @return Average number of words in tweets.
      */
     public double getAverageNumberOfWords(Set<Tweet> tweetSet) {
 
@@ -77,10 +77,10 @@ public class TweetService {
     }
 
     /**
-     * @param tweetSet
-     * @return Average number of hashtags in tweets.
      * @author Sebastian Rohe
      * This method calculates the average number of hashtags of the tweets. It requires a set of tweets.
+     * @param tweetSet
+     * @return Average number of hashtags in tweets.
      */
     public double getAverageNumberOfHashtags(List<String> usedHashtagsList, Set<Tweet> tweetSet) {
 
@@ -113,7 +113,7 @@ public class TweetService {
 
     public Map<String, Integer> getOccurrencesOfHashtags(List<String> listOfAllUsedHashtags) {
 
-        // hashmap to store the frequency of element
+        // Hashmap to store the frequency of element.
         Map<String, Integer> hm = new HashMap<>();
 
         for (String hashtagString : listOfAllUsedHashtags) {
@@ -133,6 +133,7 @@ public class TweetService {
         double averageTweetLength = getAverageTweetLength(tweetObjectSet);
 
         for (Tweet tweet : tweetObjectSet) {
+
             if (tweet.getContent().length() > averageTweetLength) {
                 // Compare all that are bigger than the average and add.
                 usersTwitteringLongTweets.add(tweet.getUser());

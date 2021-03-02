@@ -20,12 +20,13 @@ public class FileReaderHelper {
     public static Set<String> readInLineByLine(String filePath) {
 
         // tweet strings. Every string represents a read in line from the csv file.
-        Set<String> allReadInLines = new HashSet<>(0);
+        Set<String> allReadInLines = new HashSet<>();
 
         // Try to read in csv file from given file path and save every line as string in a set and return it.
         try {
             BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream
                     (new File(filePath))));
+
             String line = reader.readLine();
 
             // While line is not empty read in lines, convert them and add strings to set.
@@ -60,6 +61,7 @@ public class FileReaderHelper {
 
         // Empty set will get filled with tweets.
         Set<Tweet> actualTweets = new HashSet<>();
+
         // Set with read in line strings from readInLineByLine() method.
         Set<String> tweetStrings = FileReaderHelper.readInLineByLine(filePath);
 
