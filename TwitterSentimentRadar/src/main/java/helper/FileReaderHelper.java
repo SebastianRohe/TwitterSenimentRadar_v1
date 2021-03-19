@@ -22,28 +22,28 @@ public class FileReaderHelper {
      * @return Set of strings representing every read line.
      */
     public static Set<String> readInLineByLine(String filePath) {
-        // tweet strings. Every string represents a read in line from the csv file.
+        // tweet strings. Every string represents a read line from the CSV file.
         Set<String> allReadInLines = new HashSet<>();
 
-        // Try to read in csv file from given file path and save every line as string in a set and return it.
+        // Try to read CSV file from given file path and save every line as string in a set and return it.
         try {
             BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream(filePath)));
             String line = reader.readLine();
 
-            // While line is not empty read in lines, convert them and add strings to set.
+            // While line is not empty read lines, convert them and add strings to set.
             while (line != null) {
                 // Add line string to readInLines set.
                 allReadInLines.add(line);
-                // Next line gets read in.
+                // Next line gets read.
                 line = reader.readLine();
             }
-            // Close reader when all lines are read in.
+            // Close reader when all lines are read.
             reader.close();
 
         } catch (IOException e) {
             e.printStackTrace();
         }
-        // Return the set of all read in lines as set of strings.
+        // Return the set of all read lines as set of strings.
         return allReadInLines;
     }
 
@@ -59,7 +59,7 @@ public class FileReaderHelper {
         // Empty set will get filled with tweets.
         Set<Tweet> actualTweets = new HashSet<>();
 
-        // Set with read in line strings from readInLineByLine() method.
+        // Set with read line strings from readInLineByLine() method.
         Set<String> tweetStrings = FileReaderHelper.readInLineByLine(filePath);
 
         // For each line string in the set we will execute following code.

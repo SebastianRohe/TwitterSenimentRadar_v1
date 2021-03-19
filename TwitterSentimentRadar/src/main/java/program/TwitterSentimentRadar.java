@@ -268,7 +268,7 @@ public class TwitterSentimentRadar {
     }
 
     /**
-     * Constructor. Requires path to the CSV file and runs the init() method to read in CSV data.
+     * Constructor. Requires path to the CSV file and runs the init() method to read CSV data.
      *
      * @param filePath Path to the CSV file.
      */
@@ -281,7 +281,7 @@ public class TwitterSentimentRadar {
      * Method to 'fill' set of tweet objects with tweets and set of user objects with users by using CSV data.
      */
     public void init() {
-        // Read in all tweets from the csv file with FileReaderHelper class method.
+        // Read all tweets from the CSV file with FileReaderHelper class method.
         tweetObjectsSet = FileReaderHelper.convertReadInLines(filePath);
 
         // Empty set of all username strings.
@@ -294,7 +294,7 @@ public class TwitterSentimentRadar {
 
         // For each username string in the set of all username strings do the following.
         for (String userNameString : usersNameStrings) {
-            // Filter out all tweets by a user from the set of all tweet objects which were read in.
+            // Filter out all tweets by a user from the set of all tweet objects which were read.
             Set<Tweet> tweetsOfUserSet = tweetObjectsSet.stream().filter(t -> t.getUser().equals(userNameString)).collect(Collectors.toSet());
 
             // Initialize a new user object everytime with specific username string as parameter.
@@ -307,7 +307,7 @@ public class TwitterSentimentRadar {
             userObjectsSet.add(user);
         }
 
-        // Inform user about the number of read in tweets and users.
+        // Inform user about the number of read tweets and users.
         System.out.println("Application is ready.");
         System.out.println("Number of read tweets: " + getTweetObjectsSet().size());
         System.out.println("Number of read users: " + getUserObjectsSet().size());
