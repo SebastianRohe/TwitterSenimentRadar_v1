@@ -12,8 +12,7 @@ import java.util.*;
 public class TweetService {
 
     /**
-     * This method takes a set of users and tweets and fills the user set with the user strings of every tweet.
-     * Requires a set of tweets and a set of users.
+     * This method takes a set of users and tweets and fills user set with user strings of every tweet.
      *
      * @param tweetSet A set of tweet objects.
      * @return Set of all users from tweets.
@@ -60,20 +59,20 @@ public class TweetService {
         // Number of words for all tweets is 0 at the start.
         int numberOfWordsInAllTweets = 0;
 
-        // For every tweet its content is split in an array of the words.
+        // For every tweet its content is split in an array of words.
         for (Tweet tweet : tweetSet) {
             String tweetContentString = tweet.getContent();
-            // datastructure.Tweet content strings are split with regex "[\\s+]" (blank space) to get an array of words.
+            // Tweet content strings are split with regex "[\\s+]" (blank space) to get an array of words.
             String[] words = tweetContentString.split("[\\s+]");
             // Length value of word array is added to numberOfWordsInAllTweets.
             numberOfWordsInAllTweets += words.length;
         }
-        // Divide the number if words in all tweets by the size of the given tweet set and return.
+        // Divide the number of words in all tweets by the size of the given tweet set and return the result.
         return numberOfWordsInAllTweets / (double) tweetSet.size();
     }
 
     /**
-     * This method calculates the average number of hashtags of the tweets.
+     * This method calculates the average number of hashtags of tweets.
      *
      * @param usedHashtagsList The list of used hashtags.
      * @param tweetSet A set of tweet objects.
@@ -117,29 +116,29 @@ public class TweetService {
      */
     public Map<String, Integer> getOccurrencesOfHashtags(List<String> listOfAllUsedHashtags) {
         // Hashmap to store the frequency of element.
-        Map<String, Integer> hm = new HashMap<>();
+        Map<String, Integer> hashtagMap = new HashMap<>();
 
         for (String hashtagString : listOfAllUsedHashtags) {
-            Integer j = hm.get(hashtagString);
-            hm.put(hashtagString, (j == null) ? 1 : j + 1);
+            Integer j = hashtagMap.get(hashtagString);
+            hashtagMap.put(hashtagString, (j == null) ? 1 : j + 1);
         }
-        return hm;
+        return hashtagMap;
     }
 
     /**
-     * Method to get all users which twittered tweets above average content length.
+     * Method to get all users with tweets above average content length.
      *
-     * @param tweetObjectSet A Set of tweet objects.
-     * @return A set of users (in alphabetical order) which twittered long tweets.
+     * @param tweetSet A Set of tweet objects.
+     * @return A set of users (in alphanumerical order) with long tweets.
      */
-    public Set<String> getUsersTwitteringLongTweets(Set<Tweet> tweetObjectSet) {
-        // Using TreeSet to get alphabetical order.
+    public Set<String> getUsersTwitteringLongTweets(Set<Tweet> tweetSet) {
+        // Using TreeSet to get alphanumerical order.
         Set<String> usersTwitteringLongTweets = new TreeSet<>();
 
         // Use method to get average tweet length.
-        double averageTweetLength = getAverageTweetLength(tweetObjectSet);
+        double averageTweetLength = getAverageTweetLength(tweetSet);
 
-        for (Tweet tweet : tweetObjectSet) {
+        for (Tweet tweet : tweetSet) {
             // Only add user if content of corresponding tweet is longer than average length.
             if (tweet.getContent().length() > averageTweetLength) {
                 // In this case add user to set.

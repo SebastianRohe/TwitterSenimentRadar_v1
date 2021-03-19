@@ -22,7 +22,7 @@ public class FileReaderHelper {
      * @return Set of strings representing every read line.
      */
     public static Set<String> readInLineByLine(String filePath) {
-        // tweet strings. Every string represents a read line from the CSV file.
+        // Line strings. Every string represents a read line from the CSV file.
         Set<String> allReadInLines = new HashSet<>();
 
         // Try to read CSV file from given file path and save every line as string in a set and return it.
@@ -30,11 +30,11 @@ public class FileReaderHelper {
             BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream(filePath)));
             String line = reader.readLine();
 
-            // While line is not empty read lines, convert them and add strings to set.
+            // While line is not empty, read lines, convert them and add strings to set of all lines.
             while (line != null) {
                 // Add line string to readInLines set.
                 allReadInLines.add(line);
-                // Next line gets read.
+                // Read next line.
                 line = reader.readLine();
             }
             // Close reader when all lines are read.
@@ -64,16 +64,14 @@ public class FileReaderHelper {
 
         // For each line string in the set we will execute following code.
         for (String tweetString : tweetStrings) {
-            // If length of the line string is not 0 and the string contains tabs it is split in different string
-            // parts with tabs as separators.
-
+            // If length of the line string is not 0 and the string contains tabs it is split in different string parts.
             if (tweetString.length() != 0 && tweetString.contains("\t")) {
                 String[] splitLine = tweetString.split("\t");
                 // Create tweet objects with string values from split method. String value for date is converted via Date class.
                 Tweet createdTweet = new Tweet(Long.parseLong(splitLine[0]), new Date(Long.parseLong(splitLine[1])),
                         splitLine[2], splitLine[3], splitLine[4], Boolean.parseBoolean(splitLine[5]));
 
-                // If boolean value of retweet variable is true, retweet id default value -1 is changed.
+                // If boolean value of retweet variable is true, retweet id default value -1 is changed to string value.
                 if (Boolean.parseBoolean(splitLine[5])) {
                     createdTweet.setRetweetId(Long.parseLong(splitLine[6]));
                 }
