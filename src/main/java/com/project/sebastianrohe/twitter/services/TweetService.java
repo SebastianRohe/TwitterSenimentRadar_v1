@@ -1,6 +1,6 @@
-package services;
+package com.project.sebastianrohe.twitter.services;
 
-import datastructure.Tweet;
+import com.project.sebastianrohe.twitter.data.Tweet;
 
 import java.util.*;
 

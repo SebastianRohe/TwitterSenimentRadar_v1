@@ -1,6 +1,6 @@
-package helper;
+package com.project.sebastianrohe.twitter.helper;
 
-import datastructure.Tweet;
+import com.project.sebastianrohe.twitter.data.Tweet;
 
 import java.io.*;
 import java.util.Date;

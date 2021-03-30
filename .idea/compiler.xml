@@ -7,6 +7,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="TwitterSentimentRadar" />
+        <module name="twitter-sentiment-radar-v1" />
       </profile>
     </annotationProcessing>
   </component>

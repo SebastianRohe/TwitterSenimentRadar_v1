@@ -1,9 +1,9 @@
-package program;
+package com.project.sebastianrohe.twitter.program;
 
-import datastructure.Tweet;
-import datastructure.User;
-import helper.FileReaderHelper;
-import services.TweetService;
+import com.project.sebastianrohe.twitter.data.Tweet;
+import com.project.sebastianrohe.twitter.data.User;
+import com.project.sebastianrohe.twitter.helper.FileReaderHelper;
+import com.project.sebastianrohe.twitter.services.TweetService;
 
 import java.util.*;
 import java.util.stream.Collectors;

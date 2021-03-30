@@ -1,4 +1,4 @@
-package datastructure;
+package com.project.sebastianrohe.twitter.data;
 
 import java.util.Date;
 import java.util.Set;
