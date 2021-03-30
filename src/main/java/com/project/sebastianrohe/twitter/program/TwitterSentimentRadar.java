@@ -221,7 +221,7 @@ public class TwitterSentimentRadar {
                             System.out.println("Count of users with tweets above average length: " + usersTwitteringLongTweetsStrings.size());
                             System.out.println("Users twittering long tweets in alphanumerical order: ");
 
-                            for (String userString : usersTwitteringLongTweetsStrings){
+                            for (String userString : usersTwitteringLongTweetsStrings) {
                                 System.out.println(userString);
                             }
 
