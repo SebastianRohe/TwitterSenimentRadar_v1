@@ -61,12 +61,12 @@ public class Tweet implements TweetInterface {
     /**
      * Constructor. The retweet id of every object is later added by setRetweetId() method or id keeps its default value -1.
      *
-     * @param id Tweet id.
-     * @param date Date of creation.
-     * @param user Name of tweet author.
+     * @param id       Tweet id.
+     * @param date     Date of creation.
+     * @param user     Name of tweet author.
      * @param language Language of tweet text.
-     * @param content Content of tweet.
-     * @param retweet Boolean value to decide if retweet or not.
+     * @param content  Content of tweet.
+     * @param retweet  Boolean value to decide if retweet or not.
      */
     public Tweet(long id, Date date, String user, String language, String content, boolean retweet) {
         this.id = id;

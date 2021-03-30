@@ -75,7 +75,7 @@ public class TweetService {
      * This method calculates the average number of hashtags of tweets.
      *
      * @param usedHashtagsList The list of used hashtags.
-     * @param tweetSet A set of tweet objects.
+     * @param tweetSet         A set of tweet objects.
      * @return Average number of hashtags in tweets.
      */
     public double getAverageNumberOfHashtags(List<String> usedHashtagsList, Set<Tweet> tweetSet) {
